@@ -1,0 +1,11 @@
+1.  Create two strings with your first and last name, respectively. Then concatenate them, and print the new value as "My name is \<your newly created concatenated variable will go here\>"
+
+    ```{r}
+my_first_name <- 'John'
+my_last_name <- 'Wick'
+my_full_name <- paste(my_first_name, my_last_name)
+paste('My name is', my_full_name)
+    ```
+
+2.  What values can a BOOLEAN contain?
+True or False
