@@ -1,0 +1,105 @@
+### Homework
+
+1.  Do 5 CodeWars problems in R. Share your solutions here:
+
+    ```{r}
+    # 1
+    mul <- function(a, b) {
+      a * b
+    }
+    
+    # 2
+    solution <- function(number){
+      sum <- 0
+      for(i in 1:number-1) {
+        if (i %% 15 == 0) {
+          sum <- sum + i
+        } else if (i %% 5 == 0) {
+          sum <- sum + i
+        } else if (i %% 3 == 0) {
+          sum <- sum + i
+        }
+        }
+      sum
+    }
+    
+    # 3
+    even_or_odd <- function(n) {
+      if (n %% 2 == 0) {
+        'Even'
+      } else {
+        'Odd'
+      }
+    }
+    
+    # 4
+    get_count <- function(input_str){
+      count <-0
+      
+      if (input_str == '') {
+        count
+      } else {
+      
+      for (i in 1:nchar(input_str)) {
+        print(substring(input_str,i,i))
+        if (grepl(substring(input_str,i,i), 'aeiou', fixed = TRUE) == TRUE) {
+        count <- count + 1
+      }
+    }
+      count
+    }
+    }
+    
+    # 5
+    disemvowel <- function(string){
+      gsub('[aeiouAEIOU]','',string)
+     }
+
+    ```
+
+2.  Create a function that checks an input of type `int` and returns fizz if the number is a multiple of 3, buzz if the number is a multiple of 5, and fizzbuzz if the number is a multiple of 3 and 5.
+
+    ```{r}
+    fizzbuzz <- function(num) {
+      output = ''
+      if (num %% 3 == 0) {
+        output <- paste(output, 'fizz')
+      }
+      if (num %% 5 == 0) {
+        output <- paste(output, 'buzz')
+      }
+      output <- gsub(' ', '', output)
+      output
+    }
+    
+    print(fizzbuzz(15))
+
+    ```
+
+3.  **Mario Challenge:** In the classic Super Mario games, Mario ends each level by ascending a flight of stairs and leaping off the top to arrive at the castle at the end. (See [here](https://youtu.be/-avspZlbOWU?t=55) for details). We can imagine that each of the bricks of the stairs is a character X. Create a function that prints out a set of stairs. For example:
+
+    If the function is called marioStairs() and we pass in the value 4, we would expect to see stairs with a length of 4 and a height of 4:
+
+    X
+
+    XX
+
+    XXX
+
+    XXXX
+
+    ```{r}
+    # You may feel more comfortable figuring this out in Python first, then translating into R later.
+    mario_stairs <- function(num) {
+      output <- ''
+      for (i in 1:num) {
+        for (j in 1:i) {
+          output <- paste(output, 'X')
+        }
+        output <- gsub(' ','',output)
+        print(output)
+        output <- ''
+      }
+    }
+    print(mario_stairs(4))
+    ```
